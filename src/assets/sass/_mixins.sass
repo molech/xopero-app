@@ -1,0 +1,23 @@
+@function pxToRem($pxValue)
+  $remValue: ($pxValue * 0.0625) + rem
+  @return $remValue
+
+=screen($res-min, $res-max, $orientation: false)
+  @if $orientation
+    @media screen and (min-width: $res-min) and (max-width: $res-max) and (orientation:#{$orientation})
+  @else
+    @media screen and (min-width: $res-min) and (max-width: $res-max)
+      @content
+
+=max-screen($res)
+  @media screen and (max-width: $res)
+    @content
+
+
+=min-screen($res)
+  @media screen and (min-width: $res)
+    @content
+
+=headings
+  h1, h2, h3, h4, h5, h6
+    @content

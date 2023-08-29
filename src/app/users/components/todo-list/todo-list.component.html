@@ -1,0 +1,38 @@
+<div class="container" *ngIf="todos$ | async as todos">
+  <h1>
+    {{ "todos.todoList" | translate }}
+  </h1>
+
+  <app-card>
+    <div class="user-todos">
+      <div
+        *ngFor="let todo of todos"
+        class="user-todo"
+        [class]="todo.completed ? 'todo-completed' : ''"
+      >
+        {{ todo.title }}
+        <div>
+          <button
+            mat-stroked-button
+            [attr.aria-label]="'todos.editTodo' | translate"
+            (click)="openEditDialog(todo)"
+            class="btn-icon"
+          >
+            <mat-icon class="m-0">edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </app-card>
+
+  <div
+    class="grid pt-3 gap-2 d-flex flex-column flex-md-row justify-content-end"
+  >
+    <a [routerLink]="['/']" mat-stroked-button>
+      {{ "common.buttons.goBack" | translate }}
+    </a>
+    <button mat-flat-button color="primary" (click)="openAddDialog()">
+      {{ "todos.addTodo" | translate }}
+    </button>
+  </div>
+</div>

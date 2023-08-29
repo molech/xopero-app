@@ -1,0 +1,17 @@
+@import 'variables'
+
+.mat-accordion
+  display: flex
+  flex-direction: column
+  row-gap: pxToRem(16)
+  .mat-expansion-panel
+    margin: 0
+    border-radius: pxToRem(6)
+    box-shadow: 0 pxToRem(2) pxToRem(4) 0 rgba($black, 0.05)
+    .mat-expansion-panel-header
+      height: auto
+      font-weight: bold
+      padding: pxToRem(16) pxToRem(24)
+      &:hover
+        background-color: inherit
+

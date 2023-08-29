@@ -1,0 +1,94 @@
+<div class="container" *ngIf="users$ | async as users">
+  <h1>
+    {{ "users.usersList" | translate }}
+  </h1>
+
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel *ngFor="let user of users">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ user.name }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="user-details">
+        <div class="row">
+          <div class="user-details__item col-6 col-sm-4 col-md-3">
+            <span class="user-details__label">{{
+              "users.details.labels.username" | translate
+            }}</span>
+            <span class="user-details__value">{{ user.username }}</span>
+          </div>
+          <div class="user-details__item col-6 col-sm-4 col-md-3">
+            <span class="user-details__label">{{
+              "users.details.labels.email" | translate
+            }}</span>
+            <span class="user-details__value">{{ user.email }}</span>
+          </div>
+          <div class="user-details__item col-6 col-sm-4 col-md-3">
+            <span class="user-details__label">{{
+              "users.details.labels.address" | translate
+            }}</span>
+            <span class="user-details__value">
+              {{ user.address.street }} {{ user.address.suite }},<br />
+              {{ user.address.zipcode }} {{ user.address.city }}
+            </span>
+          </div>
+          <div class="user-details__item col-6 col-sm-4 col-md-3">
+            <span class="user-details__label">{{
+              "users.details.labels.phone" | translate
+            }}</span>
+            <span class="user-details__value">{{ user.phone }}</span>
+          </div>
+          <div class="user-details__item col-6 col-sm-4 col-md-3">
+            <span class="user-details__label">{{
+              "users.details.labels.website" | translate
+            }}</span>
+            <span class="user-details__value"
+              ><a href="http://{{ user.website }}" target="_blank">{{
+                user.website
+              }}</a></span
+            >
+          </div>
+          <div class="user-details__item col-6 col-sm-4 col-md-3">
+            <span class="user-details__label">{{
+              "users.details.labels.company" | translate
+            }}</span>
+            <span class="user-details__value">
+              {{ user.company.name }},<br />
+              <span class="user-details__additional-info">{{
+                user.company.catchPhrase
+              }}</span>
+              <span class="user-details__additional-info">{{
+                user.company.bs
+              }}</span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="grid gap-2 d-flex flex-column flex-md-row justify-content-end"
+        >
+          <a [routerLink]="[user.id, 'todos']" mat-flat-button color="primary">
+            {{ "users.todoList" | translate }}
+          </a>
+          <a [routerLink]="[user.id, 'albums']" mat-flat-button color="primary">
+            {{ "users.albumList" | translate }}
+          </a>
+          <button
+            mat-stroked-button
+            [attr.aria-label]="'users.editUser' | translate"
+            (click)="openEditDialog(user)"
+            class="btn-icon"
+          >
+            <mat-icon class="m-0">edit</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div
+    class="grid pt-3 gap-2 d-flex flex-column flex-md-row justify-content-end"
+  >
+    <button mat-flat-button color="primary" (click)="openAddDialog()">
+      {{ "users.addUser" | translate }}
+    </button>
+  </div>
+</div>

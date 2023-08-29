@@ -1,0 +1,21 @@
+<div class="container" *ngIf="photos$ | async as photos">
+  <h1>
+    {{ "photos.photoList" | translate }}
+  </h1>
+
+  <div class="row">
+    <div *ngFor="let photo of photos" class="col-4 col-md-2 pb-4">
+      <app-card>
+        <img [src]="photo.thumbnailUrl" />
+      </app-card>
+    </div>
+  </div>
+
+  <div
+    class="grid pt-3 gap-2 d-flex flex-column flex-md-row justify-content-end"
+  >
+    <a [routerLink]="['/']" mat-stroked-button>
+      {{ "common.buttons.goBack" | translate }}
+    </a>
+  </div>
+</div>

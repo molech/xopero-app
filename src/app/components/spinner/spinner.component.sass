@@ -1,0 +1,52 @@
+@import 'variables'
+
+.app-loading
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: 5000
+  background-color: rgba($white, 0.5)
+  &__spinner
+    position: absolute
+    top: 50%
+    left: 50%
+    width: pxToRem(80)
+    height: pxToRem(80)
+    transform: translate(-50%, -50%)
+    div
+      position: absolute
+      border: pxToRem(4) solid $primary
+      opacity: 1
+      border-radius: 50%
+      animation: spinner 1s cubic-bezier(0, 0.2, 0.8, 1) infinite
+      &:nth-child(2)
+        animation-delay: -0.5s
+
+@keyframes spinner
+  0%
+    top: pxToRem(36)
+    left: pxToRem(36)
+    width: 0
+    height: 0
+    opacity: 0
+  4.9%
+    top: pxToRem(36)
+    left: pxToRem(36)
+    width: 0
+    height: 0
+    opacity: 0
+  5%
+    top: pxToRem(36)
+    left: pxToRem(36)
+    width: 0
+    height: 0
+    opacity: 1
+  100%
+    top: 0
+    left: 0
+    width: pxToRem(72)
+    height: pxToRem(72)
+    opacity: 0
+

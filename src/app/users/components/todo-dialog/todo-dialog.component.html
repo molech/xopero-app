@@ -1,0 +1,37 @@
+<mat-dialog-content>
+  <div class="xopero-dialog">
+    <div class="container">
+      <header>
+        <h2>{{ "todos.editTodo" | translate }}</h2>
+      </header>
+      <form [formGroup]="todoForm" class="xopero-form">
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field appearance="outline">
+              <mat-label>{{
+                "todos.forms.labels.title" | translate
+              }}</mat-label>
+              <input matInput formControlName="title" required />
+              <mat-error *ngIf="todoForm.get('title')?.hasError('required')">{{
+                "common.forms.validationMessages.fieldRequired" | translate
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+            <mat-checkbox formControlName="completed" color="primary">{{
+              "todos.forms.labels.isCompleted" | translate
+            }}</mat-checkbox>
+          </div>
+        </div>
+        <mat-dialog-actions class="p-0 justify-content-end">
+          <button mat-stroked-button aria-label="close dialog" mat-dialog-close>
+            {{ "common.buttons.cancel" | translate }}
+          </button>
+          <button mat-flat-button color="primary" (click)="onSaveClick()">
+            {{ "common.buttons.save" | translate }}
+          </button>
+        </mat-dialog-actions>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,68 @@
+{
+  "common": {
+    "homepage": "Strona główna",
+    "placeholders": {
+      "emptyValue": "-"
+    },
+    "buttons": {
+      "save": "Zapisz",
+      "cancel": "Anuluj",
+      "goBack": "Powrót"
+    },
+    "forms": {
+      "validationMessages": {
+        "fieldRequired": "Pole wymagane",
+        "emailBadFormat": "Nieprawidłowy format emaila"
+      }
+    },
+    "ofUser": "użytkownika"
+  },
+  "users": {
+    "usersList": "Lista użytkowników",
+    "addUser": "Dodaj użytkownika",
+    "editUser": "Edytuj użytkownika",
+    "todoList": "Lista zadań",
+    "albumList": "Lista albumów",
+    "userAdded": "Użytkownik został dodany",
+    "userUpdated": "Użytkownik został zaktualizowany",
+    "forms": {
+      "labels": {
+        "name": "Imię",
+        "username": "Nazwa użytkownika",
+        "email": "Email"
+      }
+    },
+    "details": {
+      "labels": {
+        "name": "Imię",
+        "username": "Nazwa użytkownika",
+        "email": "Email",
+        "address": "Adres",
+        "phone": "Telefon",
+        "website": "Strona www",
+        "company": "Firma",
+        "catchPhrase": "Catch phrase",
+        "bs": "bs"
+      }
+    }
+  },
+  "todos": {
+    "todoList": "Lista zadań",
+    "addTodo": "Dodaj zadanie",
+    "editTodo": "Edytuj zadanie",
+    "todoAdded": "Zadanie zostało dodane",
+    "todoUpdated": "Zadanie zostało zaktualizowane",
+    "forms": {
+      "labels": {
+        "title": "Tytuł",
+        "isCompleted": "Wykonane"
+      }
+    }
+  },
+  "albums": {
+    "albumList": "Lista albumów"
+  },
+  "photos": {
+    "photoList": "Lista zdjęć"
+  }
+}

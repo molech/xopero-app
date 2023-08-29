@@ -1,0 +1,60 @@
+<mat-dialog-content>
+  <div class="xopero-dialog">
+    <div class="container">
+      <header>
+        <h2>{{ "users.addUser" | translate }}</h2>
+      </header>
+      <form [formGroup]="userForm" class="xopero-form">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ "users.forms.labels.name" | translate }}</mat-label>
+              <input matInput formControlName="name" required />
+              <mat-error *ngIf="userForm.get('name')?.hasError('required')">{{
+                "common.forms.validationMessages.fieldRequired" | translate
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <mat-form-field appearance="outline">
+              <mat-label>{{
+                "users.forms.labels.username" | translate
+              }}</mat-label>
+              <input matInput formControlName="username" required />
+              <mat-error
+                *ngIf="userForm.get('username')?.hasError('required')"
+                >{{
+                  "common.forms.validationMessages.fieldRequired" | translate
+                }}</mat-error
+              >
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <mat-form-field appearance="outline">
+              <mat-label>{{
+                "users.forms.labels.email" | translate
+              }}</mat-label>
+              <input matInput formControlName="email" required />
+              <mat-error *ngIf="userForm.get('email')?.hasError('required')">{{
+                "common.forms.validationMessages.fieldRequired" | translate
+              }}</mat-error>
+              <mat-error *ngIf="userForm.get('email')?.hasError('email')">{{
+                "common.forms.validationMessages.emailBadFormat" | translate
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <mat-dialog-actions class="p-0 justify-content-end">
+          <button mat-stroked-button aria-label="close dialog" mat-dialog-close>
+            {{ "common.buttons.cancel" | translate }}
+          </button>
+          <button mat-flat-button color="primary" (click)="onSaveClick()">
+            {{ "common.buttons.save" | translate }}
+          </button>
+        </mat-dialog-actions>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>
